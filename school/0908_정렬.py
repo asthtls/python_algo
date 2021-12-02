@@ -67,18 +67,21 @@ print("insertSort 정렬 후>",A)
 def ShellSort(A):
     n = len(A)
     h = n//2
+    print(h)
     while h > 0:
         for i in range(h, n):
             tmp = A[i]
+            print('tmp : ',tmp)
             j = i-h
+            print("j: ",j)
             while j >= 0 and A[j] > tmp:
                 A[j + h] = A[j]
                 j -= h
             A[j+h] = tmp
 
-        h //= 2
+        h = h//2
     return A
 AA=[90,30,50,20,40,10,80,60,70]
-print("정렬전 > ", AA)
+print("쉘 정렬전 > ", AA)
 A = ShellSort(AA)
 print("정렬후 > ", A)  
